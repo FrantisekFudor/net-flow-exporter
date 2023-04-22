@@ -1,0 +1,31 @@
+.TH FLOW 1
+.SH NAME
+flow \- Netflow exportér verzia 5, ktorý posiela na zberač zachytené záznamy z premávky.
+.SH SYNOPSIS
+.B ./flow
+[\fB\-f \fR\fI<file>\fR]
+[\fB\-c \fR\fI<netflow_collector>:<port>\fR]
+[\fB\-a \fR\fI<active_timer>\fR]
+[\fB\-i \fR\fI<inactive_timer>\fR]
+[\fB\-m \fR\fI<count>\fR]
+.SH DESCRIPTION
+.B flow
+\- NetFlow exportér, ktorý číta vstupný .pcap súbor alebo štandardný vstup. Úlohou je analyzovať a exportovať NetFlow flows na zberač.
+.SH OPTIONS
+.TP
+.BR \-f
+<file> meno analyzovaného .pcap súboru alebo štandarný vstup,
+.TP
+.BR \-c
+<neflow_collector:port> IP adresa a port zberača (predvolene 127.0.0.1:2055),
+.TP
+.BR \-a
+<active_timer> Interval v sekundách, po ktorom sa exportujú aktívne záznamy na zberač (predvolene 60),
+.TP
+.BR \-i
+<inactive_timer> Interval v sekundách, po jeho vypršaní sa exportujú neaktívne záznamy na zberač (predvolene 10),
+.TP
+.BR \-m
+<count> Veľkosť flow_cache. Pri dosiahnutí maximálnej veľkosti dôjde k exportu najstaršieho záznamu v cachi na zberač(predvolene 1024)
+.SH AUTHOR
+.B František Fúdor (xfudor00)
